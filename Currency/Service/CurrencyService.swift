@@ -14,12 +14,12 @@ enum DataServiceError: String, Error {
 }
 
 protocol CurrencyDataAccess {
-    func getCurrency(currencyCode: String, session: URLSession, complete: @escaping (_ success: Bool, _ currency: Currency?, _ error: DataServiceError?) -> ())
+    func getCurrency(baseCurrency: String, session: URLSession, complete: @escaping (_ success: Bool, _ currency: Currency?, _ error: DataServiceError?) -> ())
     func getSession() -> URLSession
 }
 
 // Data service for retrieving currency rates.
-class CurrencyService {
+class CurrencyService: CurrencyDataAccess {
     
     // Constants
     let serviceURL = URL(string:"https://revolut.duckdns.org/latest")
