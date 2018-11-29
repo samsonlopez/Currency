@@ -13,7 +13,7 @@ import Foundation
 
 class TestData {
     static func getTestData() -> Data {
-        let path = Bundle.main.path(forResource: "currencies", ofType: "json")!
+        let path = Bundle.main.path(forResource: "testdata", ofType: "json")!
         let data = try! Data(contentsOf: URL(fileURLWithPath: path))
         
         return data

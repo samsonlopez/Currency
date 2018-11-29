@@ -21,6 +21,7 @@
 		88F0B48821B088CD00D142BF /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0B48721B088CD00D142BF /* CurrencyService.swift */; };
 		88F0B48A21B08A3200D142BF /* CurrencyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0B48921B08A3200D142BF /* CurrencyServiceTests.swift */; };
 		88F0B48C21B08A5500D142BF /* CurrencyViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0B48B21B08A5500D142BF /* CurrencyViewModelTests.swift */; };
+		88F0B48E21B08EC700D142BF /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0B48D21B08EC700D142BF /* MockSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		88F0B48721B088CD00D142BF /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
 		88F0B48921B08A3200D142BF /* CurrencyServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyServiceTests.swift; sourceTree = "<group>"; };
 		88F0B48B21B08A5500D142BF /* CurrencyViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModelTests.swift; sourceTree = "<group>"; };
+		88F0B48D21B08EC700D142BF /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				88F0B47521B004ED00D142BF /* TestData.swift */,
 				88F0B47321B0045500D142BF /* testdata.json */,
 				88F0B45C21AFE34300D142BF /* Info.plist */,
+				88F0B48D21B08EC700D142BF /* MockSession.swift */,
 			);
 			path = CurrencyTests;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			files = (
 				88F0B48A21B08A3200D142BF /* CurrencyServiceTests.swift in Sources */,
 				88F0B47621B004ED00D142BF /* TestData.swift in Sources */,
+				88F0B48E21B08EC700D142BF /* MockSession.swift in Sources */,
 				88F0B48C21B08A5500D142BF /* CurrencyViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
