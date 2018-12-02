@@ -10,7 +10,7 @@ import UIKit
 
 class CurrencyCellView: UITableViewCell {
 
-    // ViewModel property for CurrencyViewController (MVVM Architecture)
+    // ViewModel property for CurrencyCellView (MVVM Architecture)
     lazy var viewModel: CurrencyCellViewModel = {
         return CurrencyCellViewModel()
     }()
@@ -21,6 +21,7 @@ class CurrencyCellView: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        // Create rate text input field.
         let rateTextField = UITextField(frame: CGRect(x: 0, y: 0, width: 150, height: 30))
         rateTextField.textAlignment = .right
         rateTextField.isEnabled = false
