@@ -11,24 +11,41 @@ import XCTest
 class CurrencyUITests: XCTestCase {
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGBPBaseValueInputChange_EuroValueIsUpdated() {
+        
+        let app = XCUIApplication()
+        
+        let tablesQuery = app.tables
+
+        let euroTextField = tablesQuery.cells["EUR, Euro"].children(matching: .textField).element
+        let euroTextFieldValue = euroTextField.value as! String
+
+        tablesQuery.cells["GBP, British Pound"].tap()
+        let textField = tablesQuery.cells["GBP, British Pound"].children(matching: .textField).element
+        
+        let textFieldValue = textField.value as! String
+        
+        let characterCount: Int = textFieldValue.count
+        for _ in 0..<characterCount {
+            textField.typeText(XCUIKeyboardKey.delete.rawValue)
+        }
+
+        textField.typeText("2.0")
+
+        let euroTextFieldNewValue = euroTextField.value as! String
+        print("\(euroTextFieldValue) New: \(euroTextFieldNewValue)")
+
+        XCTAssertNotEqual(euroTextFieldValue, euroTextFieldNewValue, "Rates not updated on base value input")
     }
 
 }

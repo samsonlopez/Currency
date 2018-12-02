@@ -28,6 +28,9 @@ class CurrencyViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Accessibility needs to be set for recording UI Tests.
+        self.view.isAccessibilityElement = true
+        
         // Initial retrieval of currency rates.
         fetchCurrency()
         
