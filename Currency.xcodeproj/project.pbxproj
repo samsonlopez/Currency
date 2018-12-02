@@ -23,6 +23,9 @@
 		88F0B48C21B08A5500D142BF /* CurrencyViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0B48B21B08A5500D142BF /* CurrencyViewModelTests.swift */; };
 		88F0B48E21B08EC700D142BF /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0B48D21B08EC700D142BF /* MockSession.swift */; };
 		88F0B49021B09F6B00D142BF /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0B48F21B09F6B00D142BF /* Global.swift */; };
+		88F0B49421B1308C00D142BF /* CurrencyCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0B49321B1308C00D142BF /* CurrencyCellView.swift */; };
+		88F0B49621B30B7500D142BF /* CurrencyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0B49521B30B7500D142BF /* CurrencyCellViewModel.swift */; };
+		88F0B49A21B34C7C00D142BF /* CurrencyCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0B49921B34C7C00D142BF /* CurrencyCellViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		88F0B48B21B08A5500D142BF /* CurrencyViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModelTests.swift; sourceTree = "<group>"; };
 		88F0B48D21B08EC700D142BF /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
 		88F0B48F21B09F6B00D142BF /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		88F0B49321B1308C00D142BF /* CurrencyCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCellView.swift; sourceTree = "<group>"; };
+		88F0B49521B30B7500D142BF /* CurrencyCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCellViewModel.swift; sourceTree = "<group>"; };
+		88F0B49921B34C7C00D142BF /* CurrencyCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCellViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,7 @@
 			children = (
 				88F0B48921B08A3200D142BF /* CurrencyServiceTests.swift */,
 				88F0B48B21B08A5500D142BF /* CurrencyViewModelTests.swift */,
+				88F0B49921B34C7C00D142BF /* CurrencyCellViewModelTests.swift */,
 				88F0B47521B004ED00D142BF /* TestData.swift */,
 				88F0B47321B0045500D142BF /* testdata.json */,
 				88F0B45C21AFE34300D142BF /* Info.plist */,
@@ -168,8 +175,10 @@
 			isa = PBXGroup;
 			children = (
 				88F0B44921AFE34100D142BF /* Main.storyboard */,
-				88F0B47A21B00A6A00D142BF /* CurrencyViewModel.swift */,
 				88F0B48121B00BBD00D142BF /* CurrencyViewController.swift */,
+				88F0B47A21B00A6A00D142BF /* CurrencyViewModel.swift */,
+				88F0B49321B1308C00D142BF /* CurrencyCellView.swift */,
+				88F0B49521B30B7500D142BF /* CurrencyCellViewModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -310,7 +319,9 @@
 				88F0B48821B088CD00D142BF /* CurrencyService.swift in Sources */,
 				88F0B48221B00BBD00D142BF /* CurrencyViewController.swift in Sources */,
 				88F0B49021B09F6B00D142BF /* Global.swift in Sources */,
+				88F0B49421B1308C00D142BF /* CurrencyCellView.swift in Sources */,
 				88F0B47B21B00A6A00D142BF /* CurrencyViewModel.swift in Sources */,
+				88F0B49621B30B7500D142BF /* CurrencyCellViewModel.swift in Sources */,
 				88F0B48421B04EDD00D142BF /* Currency.swift in Sources */,
 				88F0B44621AFE34100D142BF /* AppDelegate.swift in Sources */,
 			);
@@ -323,6 +334,7 @@
 				88F0B48A21B08A3200D142BF /* CurrencyServiceTests.swift in Sources */,
 				88F0B47621B004ED00D142BF /* TestData.swift in Sources */,
 				88F0B48E21B08EC700D142BF /* MockSession.swift in Sources */,
+				88F0B49A21B34C7C00D142BF /* CurrencyCellViewModelTests.swift in Sources */,
 				88F0B48C21B08A5500D142BF /* CurrencyViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

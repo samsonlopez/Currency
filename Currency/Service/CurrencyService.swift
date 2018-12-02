@@ -22,13 +22,13 @@ protocol CurrencyDataAccess {
 class CurrencyService: CurrencyDataAccess {
     
     // Constants
-    let serviceURL = URL(string:"https://revolut.duckdns.org/latest")
+    let baseURLString = "https://revolut.duckdns.org/latest"
     let maxConnectionsPerHost = 1
     
     // Get currency method using completion handler
-    func getCurrency(baseCurrency:String, session:URLSession, complete: @escaping (_ success: Bool, _ currency: Currency?, _ error: DataServiceError?) -> ()) {
+    func getCurrency(baseCurrency: String, session: URLSession, complete: @escaping (_ success: Bool, _ currency: Currency?, _ error: DataServiceError?) -> ()) {
         
-        let urlRequest = getURLRequest()
+        let urlRequest = getURLRequest(baseCurrency: baseCurrency)
         
         let dataTask = session.dataTask (with: urlRequest) { (data, response, error) in
             if(error != nil) {
@@ -56,7 +56,13 @@ class CurrencyService: CurrencyDataAccess {
         dataTask.resume()
     }
     
-    private func getURLRequest() -> URLRequest {
+    private func getURLRequest(baseCurrency: String) -> URLRequest {
+        var urlComponents = URLComponents(string: baseURLString)!
+        urlComponents.queryItems = [
+            URLQueryItem(name: "base", value: baseCurrency),
+        ]
+        
+        let serviceURL = urlComponents.url
         let urlRequest = URLRequest(url: serviceURL!)
         
         return urlRequest
