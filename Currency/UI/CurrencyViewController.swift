@@ -79,6 +79,9 @@ class CurrencyViewController: UITableViewController, UITextFieldDelegate {
 
         cell.textLabel?.text = String(describing: currencyCode)
         cell.detailTextLabel?.text = Global.currencies[currencyCodes[indexPath.row]]
+        
+        let flagImage = UIImage(named: currencyCode.lowercased())
+        cell.imageView?.image = flagImage
 
         cell.rateTextField.delegate = self
         if indexPath.row == 0 {
