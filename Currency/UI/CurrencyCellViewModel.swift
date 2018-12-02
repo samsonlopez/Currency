@@ -22,4 +22,14 @@ class CurrencyCellViewModel {
         return rateForBaseValue
     }
 
+    func getFormattedRate(currencyBaseValue: Double, currencyViewModel: CurrencyViewModel) -> String? {
+        var formattedRate: String?
+        
+        if let rateForBaseValue = getRate(currencyBaseValue: currencyBaseValue, currencyViewModel:currencyViewModel) {
+            formattedRate = Common.formatRate(rate: rateForBaseValue, locale: Locale.current)
+        }
+        
+        return formattedRate
+    }
+
 }

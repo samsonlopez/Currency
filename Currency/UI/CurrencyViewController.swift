@@ -48,18 +48,15 @@ class CurrencyViewController: UITableViewController, UITextFieldDelegate {
     
     // Refresh the currency rates in the list with the current baseCurrency.
     func refreshCurrency() {
-        print("Refreshing currency")
-        
         let tableView = self.view as! UITableView
         
         for row in 1...currencyCodes.count-1 {
             if let cell = tableView.cellForRow(at: IndexPath(row: row, section: 0)) as? CurrencyCellView {
                 
-                let rateForBaseValue = cell.viewModel.getRate(currencyBaseValue: baseCurrencyValue, currencyViewModel:viewModel)
-                cell.rateTextField.text = rateForBaseValue?.description
+                let formattedRateForBaseValue = cell.viewModel.getFormattedRate(currencyBaseValue: baseCurrencyValue, currencyViewModel:viewModel)
+                cell.rateTextField.text = formattedRateForBaseValue
             }
         }
-        
     }
     
 
@@ -92,8 +89,12 @@ class CurrencyViewController: UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: 0)) as! CurrencyCellView
+        
+        let firstCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! CurrencyCellView
+        firstCell.rateTextField.isEnabled = false
 
+        let cell = tableView.cellForRow(at: IndexPath(row: indexPath.row, section: 0)) as! CurrencyCellView
+        
         cell.accessoryView = cell.rateTextField
         cell.isSelected = false
         
@@ -116,6 +117,7 @@ class CurrencyViewController: UITableViewController, UITextFieldDelegate {
         // Enable editing for base currency
         cell.rateTextField.isEnabled = true
         cell.rateTextField.becomeFirstResponder()
+        
                 
         refreshCurrency()
     }
@@ -139,6 +141,8 @@ class CurrencyViewController: UITableViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        textField.text = Common.formatRate(rate: baseCurrencyValue, locale: Locale.current)
+        
         return false
     }
 }
